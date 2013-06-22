@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+      <!--重新定义入库单-->
+      <report id="stock.report_picking_list_in" model="stock.picking.in" name="stock.picking.list.new" string="Receipt Slip" file="custom_reports/report/picking.mako" report_type='mako2html'/>
+    </data>
+</openerp>
