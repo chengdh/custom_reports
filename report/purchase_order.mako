@@ -76,12 +76,12 @@
     %for line in  order.order_line:
     <tr>
       <td>${line.product_id.name}</td>
-      <td></td>
+      <td>${line.product_id.default_code}</td>
       <td>${line.price_unit}</td>
       <td>${line.product_qty}</td>
       <td>${line.product_uom.name}</td>
       <td>${formatLang(line.price_subtotal)}</td>
-      <td></td>
+      <td>${int(line.product_uom.factor_inv or 1)}</td>
       <td>${line.product_id.uos_id.name}</td>
       <td></td>
     </tr>
