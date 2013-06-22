@@ -1,4 +1,5 @@
 #coding: utf-8
+# vim: set ft=html:
 <html>
 <body>
 <h3>测试入库单</h3>
@@ -21,3 +22,5 @@
 </table>
 </body>
 </html>
+
+# vim: set filetype=html:
