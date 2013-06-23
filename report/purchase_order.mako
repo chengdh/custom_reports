@@ -26,7 +26,7 @@
 %for order in objects:
 <table class='header-table'>
   <tr>
-    <th colspan='4'>采购订单</th>
+    <th colspan='4'>${user.company_id.name}采购订单</th>
   </tr>
   <tr>
     <td>入库单号:</td>
@@ -51,7 +51,7 @@
     <td>仓库:</td>
     <td>${order.warehouse_id.name}</td>
     <td>打印时间:</td>
-    <td>${datetime.now()}</td>
+    <td>${datetime.now().strftime('%Y-%m-%d %H:%M')}</td>
   </tr>
   <tr>
     <td>备注:</td>
@@ -82,8 +82,8 @@
       <td>${line.product_uom.name}</td>
       <td>${formatLang(line.price_subtotal)}</td>
       <td>${int(line.product_uom.factor_inv or 1)}</td>
-      <td>${line.product_id.uos_id.name}</td>
-      <td></td>
+      <td>${line.product_id.uos_id.name or line.product_uom.name}</td>
+      <td>${int(line.product_uom.factor_inv or 1)*line.product_qty}</td>
     </tr>
     %endfor
     <tr>
@@ -101,7 +101,7 @@
   <tfoot>
     <tr>
       <td>制表人:</td>
-      <td colspan='3'></td>
+      <td colspan='3'>${user.name}</td>
       <td>复核人:</td>
       <td colspan='4'></td>
     </tr>
